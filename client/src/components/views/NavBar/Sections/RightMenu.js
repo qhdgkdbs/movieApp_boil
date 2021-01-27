@@ -19,7 +19,9 @@ function RightMenu(props) {
     });
   };
 
+
   if (user.userData && !user.userData.isAuth) {
+    
     return (
       <Menu mode={props.mode}>
         <Menu.Item key="mail">
@@ -31,10 +33,14 @@ function RightMenu(props) {
       </Menu>
     )
   } else {
+    if (user.userData) var name = user.userData.name
     return (
       <Menu mode={props.mode}>
+        <Menu.Item key="aa">
+          <a>Hello, <span style={{color : 'blue'}}>{name}</span></a>
+        </Menu.Item>
         <Menu.Item key="logout">
-          <a onClick={logoutHandler}>Logout</a>
+          <a onClick={logoutHandler}>log out</a>
         </Menu.Item>
       </Menu>
     )
