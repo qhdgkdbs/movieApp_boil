@@ -27,7 +27,7 @@ function Favorite(props) {
         Axios.post('/api/favorite/favoriteNumber', variables)
             .then(response => {
                 if(response.data.success){
-                    console.log(response.data)
+                    // console.log(response.data)
                     setFavoriteNumber(response.data.favoriteNumber)
                 }else{
                     alert("숫자 정보를 가져오지 못했어")
@@ -53,6 +53,7 @@ function Favorite(props) {
                 if(response.data.success){
                     setFavoriteNumber(favorited - 1)
                     setFavorited(!favorited)
+                    console.log(variables)
                 }else{
                     alert("좋아요 취소 실패")
                 }
